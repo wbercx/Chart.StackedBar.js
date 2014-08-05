@@ -280,26 +280,28 @@
 
             if (!singleTooltip) {
                 Chart.Type.prototype.showTooltip.apply(this, arguments);
-            } else if (ChartElements.length === 1) {
+            } else {
                 this.draw();
 
-                var Element = ChartElements[0];
-                var tooltipPosition = Element.tooltipPosition();
-                new Chart.Tooltip({
-                    x: Math.round(tooltipPosition.x),
-                    y: Math.round(tooltipPosition.y),
-                    xPadding: this.options.tooltipXPadding,
-                    yPadding: this.options.tooltipYPadding,
-                    fillColor: this.options.tooltipFillColor,
-                    textColor: this.options.tooltipFontColor,
-                    fontFamily: this.options.tooltipFontFamily,
-                    fontStyle: this.options.tooltipFontStyle,
-                    fontSize: this.options.tooltipFontSize,
-                    caretHeight: this.options.tooltipCaretSize,
-                    cornerRadius: this.options.tooltipCornerRadius,
-                    text: helpers.template(this.options.tooltipTemplate, Element),
-                    chart: this.chart
-                }).draw();
+                if (ChartElements.length === 1) {
+                    var Element = ChartElements[0];
+                    var tooltipPosition = Element.tooltipPosition();
+                    new Chart.Tooltip({
+                        x: Math.round(tooltipPosition.x),
+                        y: Math.round(tooltipPosition.y),
+                        xPadding: this.options.tooltipXPadding,
+                        yPadding: this.options.tooltipYPadding,
+                        fillColor: this.options.tooltipFillColor,
+                        textColor: this.options.tooltipFontColor,
+                        fontFamily: this.options.tooltipFontFamily,
+                        fontStyle: this.options.tooltipFontStyle,
+                        fontSize: this.options.tooltipFontSize,
+                        caretHeight: this.options.tooltipCaretSize,
+                        cornerRadius: this.options.tooltipCornerRadius,
+                        text: helpers.template(this.options.tooltipTemplate, Element),
+                        chart: this.chart
+                    }).draw();
+                }
             }
         },
         addData: function (valuesArray,label) {
