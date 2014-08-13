@@ -1,6 +1,6 @@
 {
   "name": "Chart.StackedBar.js",
-  "version": "1.0.4-FIX",
+  "version": "1.0.5",
   "description": "Modified StackedBar implementation for Chart.js",
   "homepage": "https://github.com/nnnick/Chart.js",
   "author": "wbercx",
