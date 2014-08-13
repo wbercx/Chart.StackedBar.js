@@ -146,7 +146,7 @@
                         datasetObject.bars.push(new this.BarClass({
                             value: dataPoint,
                             label: data.labels[index],
-                            metaData: data.metaData,
+                            metaData: dataset.metaData,
                             datasetLabel: dataset.label,
                             strokeColor: dataset.strokeColor,
                             fillColor: dataset.fillColor,
